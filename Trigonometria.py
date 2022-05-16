@@ -28,12 +28,12 @@ while True:
             subprocess.call([sys.executable, os.path.realpath(__file__)] + sys.argv[1:])
         if resp2[i] == "xx" or resp2[i] == "yy" or resp2[i] == "zz":
             resp2[i] = "0"
-        if resp2[i][0] == "r":
-            resp2[i] = resp2[i].replace("r","")
-            resp2[i] = math.sqrt(float(resp2[i]))
         for j in range(len(resp2[i])):
             if resp2[i][j] == ",":
                 resp2[i] = resp2[i].replace(",",".")
+        if resp2[i][0] == "r":
+            resp2[i] = resp2[i].replace("r","")
+            resp2[i] = math.sqrt(float(resp2[i]))
     resp3 = [float(i) for i in resp2]
     catOp = resp3[0]; catAd = resp3[1]; hip = resp3[2]
     
